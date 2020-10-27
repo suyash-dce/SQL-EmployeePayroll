@@ -1,7 +1,15 @@
-CREATE TABLE `mployee_payroll (
+CREATE DATABASE employee_payroll;
+USE employee_payroll;
+
+CREATE TABLE employee_payroll (
   ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
   NAME VARCHAR(150) NOT NULL,
   SALARY DOUBLE NOT NULL,
   START_DATE DATE NOT NULL,
-  PRIMARY KEY (ID)
+  PRIMARY KEY (`ID`)
 );
+
+INSERT INTO employee_payroll (NAME,SALARY,START_DATE) VALUES
+( 'Suyash', 50000.00, '2020-10-25' ),
+( 'Harshit', 80000.00, '2020-11-25' )
+;
