@@ -15,3 +15,7 @@ INSERT INTO employee_payroll (NAME,SALARY,START_DATE) VALUES
 ;
 
 SELECT * FROM employee_payroll;
+
+SELECT SALARY FROM employee_payroll WHERE NAME = 'Suyash';
+
+SELECT * FROM employee_payroll WHERE START_DATE BETWEEN CAST('2020-01-01' AS DATE) AND DATE(NOW());
