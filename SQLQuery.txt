@@ -1,0 +1,2 @@
+CREATE DATABASE employee_payroll;
+USE employee_payroll;
