@@ -35,3 +35,11 @@ SELECT SUM(SALARY) FROM employee_payroll GROUP BY GENDER;
 SELECT MIN(SALARY) FROM employee_payroll GROUP BY GENDER;
 
 SELECT MAX(SALARY) FROM employee_payroll GROUP BY GENDER;
+
+ALTER TABLE employee_payroll ADD phoneNo VARCHAR(15) AFTER NAME;
+
+ALTER TABLE employee_payroll ADD address VARCHAR(100) AFTER phoneNo;
+
+ALTER TABLE employee_payroll ADD department VARCHAR(50) AFTER address;
+
+ALTER TABLE employee_payroll ALTER address SET DEFAULT 'NOT PROVIDED';
