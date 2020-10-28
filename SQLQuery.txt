@@ -43,3 +43,13 @@ ALTER TABLE employee_payroll ADD address VARCHAR(100) AFTER phoneNo;
 ALTER TABLE employee_payroll ADD department VARCHAR(50) AFTER address;
 
 ALTER TABLE employee_payroll ALTER address SET DEFAULT 'NOT PROVIDED';
+
+ALTER TABLE employee_payroll RENAME COLUMN SALARY TO basicPay;
+
+ALTER TABLE employee_payroll ADD deductions DOUBLE NOT NULL AFTER basicPay;
+
+ALTER TABLE employee_payroll ADD taxablePay DOUBLE NOT NULL AFTER deductions;
+
+ALTER TABLE employee_payroll ADD incomeTax DOUBLE NOT NULL AFTER taxablePay;
+
+ALTER TABLE employee_payroll ADD netPay Double NOT NULL AFTER incomeTax;
