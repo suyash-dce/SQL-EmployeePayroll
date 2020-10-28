@@ -57,3 +57,25 @@ ALTER TABLE employee_payroll ADD netPay Double NOT NULL AFTER incomeTax;
 insert into employee_payroll (name, gender, department, basicPay, deductions, taxablePay, incomeTax, netPay, start_date) VALUES('Terisa', 'F', 'Marketing', 200000.00, 50000.00, 150000.00, 50000.00, 100000.00, '2018-01-03');
 
 update employee_payroll set department='Sales' where name='Terisa';
+
+CREATE table employeeDetails(
+empID   INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Name varchar(50) NOT NULL,
+gender char(1),
+phoneNo varchar(15),
+address varchar(100),
+department varchar(50) not null,
+START_DATE DATE NOT NULL
+);
+
+CREATE TABLE payroll
+(
+empID INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+FOREIGN KEY (empID) REFERENCES employeeDetails (empID),
+basicPay DOUBLE NOT NULL,
+deductions DOUBLE NOT NULL,
+taxablePay DOUBLE NOT NULL,
+incomeTax DOUBLE NOT NULL,
+netPay DOUBLE NOT NULL
+);
+
