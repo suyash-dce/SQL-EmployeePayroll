@@ -47,9 +47,13 @@ ALTER TABLE employee_payroll ALTER address SET DEFAULT 'NOT PROVIDED';
 ALTER TABLE employee_payroll RENAME COLUMN SALARY TO basicPay;
 
 ALTER TABLE employee_payroll ADD deductions DOUBLE NOT NULL AFTER basicPay;
-
+        
 ALTER TABLE employee_payroll ADD taxablePay DOUBLE NOT NULL AFTER deductions;
 
 ALTER TABLE employee_payroll ADD incomeTax DOUBLE NOT NULL AFTER taxablePay;
-
+        
 ALTER TABLE employee_payroll ADD netPay Double NOT NULL AFTER incomeTax;
+
+insert into employee_payroll (name, gender, department, basicPay, deductions, taxablePay, incomeTax, netPay, start_date) VALUES('Terisa', 'F', 'Marketing', 200000.00, 50000.00, 150000.00, 50000.00, 100000.00, '2018-01-03');
+
+update employee_payroll set department='Sales' where name='Terisa';
